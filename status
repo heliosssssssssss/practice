@@ -1,0 +1,99 @@
+import requests
+import time
+
+webhook = "https://ptb.discord.com/api/webhooks/1273360074097819791/VuORem1SGVPN9yW9uA81gKRudODdX-3HzW_JJcSUuiE2dqBv2Auf5eHcUhPKmGIxTl_I"
+
+def send_gift_message(webhook_url, recipient, rec_name, everyone_tag, game_name, pid):
+    data = {
+        "content": f"Hi, <@{recipient}> you have been sent a gift by <@{693180839869153342}> (Gift Systems V4 - @{everyone_tag})",
+        "embeds": [
+            {
+                "title": "A gift has just been sent - Powered by helios.ac",
+                "description": f"**{rec_name} has received {game_name} - PID {pid}**",
+                "color": 00000,
+                "footer": {
+                    "text": "helios.ac | helios international security group llc // logistics-g-id: 095f-1x99",
+                },
+                "url": "https://helios.ac/"
+            }
+        ]
+    }
+    
+    r = requests.post(url=webhook_url, json=data)
+    print(r.status_code, r.text)
+
+def send_announce_1(webhook_url, msg):
+    data = {
+        "embeds": [
+            {
+                "title": "",
+                "description": f"{msg}",
+                "color": 00000,
+                "footer": {
+                    "text": "helios.ac / hisc | helios distribution system, affiliated with hps (v7)",
+                }
+            }
+        ]
+    }
+    
+    r = requests.post(url=webhook_url, json=data)
+    print(r.status_code, r.text)
+
+send_announce_1(
+    webhook_url = webhook,
+    msg = "RTC (Real-time communication) server has detected a execution command from VPS-6 (LONDON / UK-GB) : **/_gift @group_c : @game_package_9**"
+)
+send_announce_1(
+    webhook_url = webhook,
+    msg = "Instructions have been processed, now in progress.."
+)
+
+time.sleep(5)
+
+send_announce_1(
+    webhook_url = webhook,
+    msg = "Game packages were successfully bought and are now awaiting sending status code .. "
+)
+
+time.sleep(10)
+
+send_announce_1(
+    webhook_url = webhook,
+    msg = "Instruction successfully completed. All systems normal"
+)
+
+time.sleep(5)
+
+send_announce_1(
+    webhook_url = webhook,
+    msg = "Sending now through the VPS-6 and VPS-1 network.. (192A-FF0)"
+)
+
+time.sleep(3)
+
+# Musab
+send_gift_message(
+    webhook_url=webhook,
+    recipient="928656259962503208",
+    rec_name="SamuraiXeon2",
+    everyone_tag="everyone",
+    game_name="Ghost of Tsushima DIRECTOR'S CUT (G-ID [115])",
+    pid=190
+)
+
+# beau
+send_gift_message(
+    webhook_url=webhook,
+    recipient="934497516093845564",
+    rec_name="bazinga",
+    everyone_tag="everyone",
+    game_name="HELLDIVERS™ 2 (G-ID [115])",
+    pid=191
+)
+
+time.sleep(3)
+
+send_announce_1(
+    webhook_url = webhook,
+    msg = "Primary group instruction was completed successfully. Thank you for using [HELIOS-NETWORK] !"
+)
