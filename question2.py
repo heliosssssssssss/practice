@@ -12,7 +12,7 @@ def formatDate(gbm_s):
 
     digits_to_analyze = []
 
-    #digits_to_analyze.append(for i in range())
+    digits_to_analyze = 
 
 
 
